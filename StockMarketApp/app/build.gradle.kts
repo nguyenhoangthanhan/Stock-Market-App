@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.material.compose)
     implementation(libs.junit)
     implementation(libs.androidx.test.ext.junit)
     implementation(libs.espresso)
@@ -87,4 +88,6 @@ dependencies {
     implementation(libs.room.compiler)
     implementation(libs.room.ktx)
 
+    implementation(libs.destinations.navigator)
+    ksp(libs.destinations.ksp)
 }

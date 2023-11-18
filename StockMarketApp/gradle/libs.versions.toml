@@ -24,6 +24,8 @@ retrofit = "2.9.0"
 okhttp = "4.11.0"
 logging-interceptor = "4.8.1"
 room = "2.6.0"
+destinations-navigator = "1.8.42-beta"
+material-compose = "1.5.4"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -41,6 +43,7 @@ ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+material-compose = { group = "androidx.compose.material", name = "material", version.ref = "material-compose" }
 material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "material-icons-extended"  }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
@@ -67,7 +70,8 @@ logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-intercep
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
-
+destinations-navigator = { group = "io.github.raamcosta.compose-destinations", name = "core", version.ref = "destinations-navigator" }
+destinations-ksp = { group = "io.github.raamcosta.compose-destinations", name = "ksp", version.ref = "destinations-navigator" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
