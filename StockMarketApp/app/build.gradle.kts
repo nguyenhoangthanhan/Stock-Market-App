@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId = "com.nguyenhoangthanhan.stockmarketapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -94,4 +94,7 @@ dependencies {
 
     implementation(libs.destinations.navigator)
     ksp(libs.destinations.ksp)
+
+    //convert to LocalDateTime API < 26
+    implementation("com.jakewharton.threetenabp:threetenabp:1.2.1")
 }
