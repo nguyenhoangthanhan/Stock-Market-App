@@ -2,8 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.library)
-    kotlin("kapt")
+//    kotlin("kapt")
     alias(libs.plugins.devtools.ksp)
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 android {
@@ -33,17 +37,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
     packaging {
         resources {
@@ -70,8 +74,8 @@ dependencies {
     implementation(libs.ui.tooling)
     implementation(libs.ui.test.manifest)
 
-    kapt(libs.hilt.compiler)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.compiler)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
 
@@ -85,7 +89,7 @@ dependencies {
     implementation(libs.logging.interceptor)
 
     implementation(libs.room.runtime)
-    implementation(libs.room.compiler)
+    ksp(libs.room.compiler)
     implementation(libs.room.ktx)
 
     implementation(libs.destinations.navigator)

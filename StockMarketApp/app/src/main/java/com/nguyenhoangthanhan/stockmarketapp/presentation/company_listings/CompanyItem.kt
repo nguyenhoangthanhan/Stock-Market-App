@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -26,7 +27,7 @@ fun CompanyItem(
 ) {
     Row(
         modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(
             modifier = Modifier.weight(1f)
@@ -39,7 +40,7 @@ fun CompanyItem(
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 16.sp,
                     style = TextStyle(
-                        color = MaterialTheme.colorScheme.background,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
                     ),
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,
@@ -50,7 +51,7 @@ fun CompanyItem(
                     text = company.exchange,
                     fontWeight = FontWeight.Light,
                     style = TextStyle(
-                        color = MaterialTheme.colorScheme.background
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
                     )
                 )
             }
@@ -59,7 +60,7 @@ fun CompanyItem(
                 text = "(${company.symbol})",
                 fontStyle = FontStyle.Italic,
                 style = TextStyle(
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
                 )
             )
         }
