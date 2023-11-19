@@ -2,6 +2,7 @@
 
 package com.nguyenhoangthanhan.stockmarketapp.presentation.company_listings
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -24,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.nguyenhoangthanhan.stockmarketapp.presentation.destinations.CompanyInfoScreenDestination
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -39,7 +41,10 @@ fun CompanyListingsScreen(
     val pullRefreshState = rememberPullRefreshState(viewModel.state.isRefreshing, {
         viewModel.onEvent(CompanyListingsEvent.Refresh)
     })
+
     val state = viewModel.state
+    Log.d("Screen_TAG_CompanyListings", state.toString())
+
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -76,7 +81,9 @@ fun CompanyListingsScreen(
                             )
                             .fillMaxWidth()
                             .clickable {
-                                //TODO: Navigate to detail screen
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(company.symbol)
+                                )
                             }
                             .padding(16.dp)
                     )
